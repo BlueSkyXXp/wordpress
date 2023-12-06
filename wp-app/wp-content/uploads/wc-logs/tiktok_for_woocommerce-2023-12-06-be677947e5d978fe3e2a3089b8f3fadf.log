@@ -1,0 +1,20 @@
+2023-12-06T17:26:47+00:00 DEBUG POST: https://ads.tiktok.com/marketing_api/api/developer/app/create_auto_approve/
+
+{"business_platform":"PROD","smb_id":"tt4b_woocommerce_6570aed757781http1037372207999wp-admin","smb_name":"PROD","redirect_url":"http:\/\/10.37.37.220:7999\/wp-admin\/"}
+ ajax: no
+2023-12-06T17:26:47+00:00 ERROR Tt4b_Mapi_Class::create_open_source_app: Response: 
+
+http_request_failed: cURL error 35: Recv failure: Connection reset by peer
+
+2023-12-06T17:26:47+00:00 ERROR Tt4b_Mapi_Class::create_open_source_app: Response: 
+
+http_request_failed: cURL error 35: Recv failure: Connection reset by peer
+
+2023-12-06T17:26:47+00:00 ERROR Tt4b_Mapi_Class::create_open_source_app: Response: 
+
+http_request_failed: cURL error 35: Recv failure: Connection reset by peer
+
+2023-12-06T17:26:48+00:00 ERROR Tt4b_Mapi_Class::create_open_source_app: Response: 
+
+http_request_failed: cURL error 35: Recv failure: Connection reset by peer
+

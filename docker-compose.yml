@@ -4,11 +4,11 @@ services:
   wp:
     image: wordpress:latest # https://hub.docker.com/_/wordpress/
     ports:
-      - ${IP}:${PORT}:80 # change ip if required
+      - 7999:80 # change ip if required
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./wp-app:/var/www/html # Full wordpress project
-      #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
+        #- ./wp-plugins/zhuige-shop:/var/www/html/wp-content/plugins/zhuige-shop # Plugin development
       #- ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name # Theme development
     environment:
       WORDPRESS_DB_HOST: db
@@ -43,7 +43,7 @@ services:
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
       UPLOAD_LIMIT: 50M
     ports:
-      - ${IP}:8080:80
+      - 8080:80
     links:
       - db:db
 
@@ -51,9 +51,9 @@ services:
     image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
     # platform: linux/x86_64  # Uncomment if your machine is running on arm (ex: Apple Silicon processor)
     ports:
-      - ${IP}:3306:3306 # change ip if required
+      - 3306:3306 # change ip if required
     command: [
-        '--default_authentication_plugin=mysql_native_password',
+        '--default_authentication_plugin=caching_sha2_password',
         '--character-set-server=utf8mb4',
         '--collation-server=utf8mb4_unicode_ci'
     ]
@@ -66,3 +66,4 @@ services:
 
 volumes:
   db_data:
+  portainer_data:
